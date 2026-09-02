@@ -1,0 +1,79 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+.env/
+.venv/
+venv/
+ENV/
+env/
+nextgen/
+
+# Jupyter Notebook & Checkpoints
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# Model Checkpoints, Weights & Large Artifacts
+*.pt
+*.pth
+*.bin
+*.onnx
+*.safetensors
+*.ckpt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+checkpoints/
+saved_models/
+weights/
+
+# Datasets, Raw Data & Processing Dumps
+data/
+datasets/
+raw_data/
+processed_data/
+*.csv
+*.tsv
+*.parquet
+*.feather
+*.jsonl
+*.h5
+*.tar.gz
+*.zip
+*.npy
+*.npz
+
+# Logs, Metrics & Profiling
+runs/
+logs/
+events.out.tfevents.*
+wandb/
+.neptune/
+mlruns/
+lightning_logs/
+*.log
+
+# Distribution / Packaging
+build/
+dist/
+*.egg-info/
+
+# Environments & Secret Keys
+.env
+.env.local
+secrets.json
+
+# IDEs & System Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
