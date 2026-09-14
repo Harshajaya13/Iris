@@ -6,10 +6,10 @@ from model import GPT
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
 vocab_size = 50257
-seq_len = 64
-num_dims = 128
+seq_len = 128
+num_dims = 256
 num_heads = 4
-num_layers = 4
+num_layers = 6
 
 model = GPT(vocab_size, seq_len, num_dims, num_heads, num_layers, p=0.0).to(device)
 checkpoint = torch.load("checkpoint.pt", map_location=device, weights_only=True)

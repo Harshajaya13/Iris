@@ -3,18 +3,18 @@ from dataset import DataLoader
 from model import GPT
 
 vocab_size = 50257
-seq_len = 64
-num_dims = 128
-num_heads = 4
-num_layers = 4
+seq_len = 128         
+num_dims = 256         
+num_heads = 4          
+num_layers = 6        
 
-block_size = 64
-batch_size = 16
+block_size = 128       
+batch_size = 32        
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-learning_rate = 1e-3
-max_iters = 1000
-eval_interval = 100
+learning_rate = 5e-4  
+max_iters = 5000      
+eval_interval = 250
 
 dataset = DataLoader(block_size, batch_size, device)
 model = GPT(vocab_size, seq_len, num_dims, num_heads, num_layers, p=0.1).to(device)
