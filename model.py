@@ -70,7 +70,7 @@ class Transformer(nn.Module):
     def __init__(self,num_dims,num_heads,p=0.1):
         super().__init__()
         self.ln1 = nn.LayerNorm(num_dims,eps=1e-5)
-        self.attn = CausalSelfAttention(num_dims,num_heads,p=0.1)
+        self.attn = CausalSelfAttention(num_dims,num_heads,p=p)
         self.ln2 = nn.LayerNorm(num_dims,eps=1e-5)
         self.mlp = MyMLP(in_features=num_dims,hidden_features=4*num_dims,out_features=num_dims)
 

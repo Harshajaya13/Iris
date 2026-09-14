@@ -3,7 +3,7 @@ import torch.nn.functional as F
 import tiktoken
 from model import GPT
 
-device = "cuda" if torch.cuda.is_available else "cpu"
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 vocab_size = 50257
 seq_len = 64
@@ -12,7 +12,7 @@ num_heads = 4
 num_layers = 4
 
 model = GPT(vocab_size, seq_len, num_dims, num_heads, num_layers, p=0.0).to(device)
-checkpoint = torch.load("checkpoint.pt", map_location=device)
+checkpoint = torch.load("checkpoint.pt", map_location=device, weights_only=True)
 model.load_state_dict(checkpoint)
 model.eval()
 
@@ -40,6 +40,22 @@ with torch.no_grad():
         logits,_ = model(idx_cond)
 
         logits = logits[:,-1,:]
+        """
+        You hand the model: ["The", "danger"].
+        
+        Because Transformers process all positions simultaneously, model(idx_cond) outputs guesses for every position:
+            Position 1: "What comes after 'The'?"
+            Position 2: "What comes after 'danger'?"
+            
+        Shape of logits coming out is: (1, 2, 50257).
+            1 batch
+            2 words
+            50257 raw scores for every word in the English dictionary.
+            
+            We only care about what comes after "danger" (the very last word!).
+            logits[:, -1, :] means: take batch 0, take the very last time position (-1), and keep all 50,257 vocabulary scores.
+            Now the shape is just (1, 50257): one row of raw scores for the next upcoming word.
+        """
 
         # apply temperature scaling 
         logits = logits/temperature
@@ -60,6 +76,6 @@ generated_tokens = idx[0].tolist()
 output_text = enc.decode(generated_tokens)
 print(output_text)
 
-        
+ 
 
     
