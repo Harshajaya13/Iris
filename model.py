@@ -72,7 +72,7 @@ class Transformer(nn.Module):
         self.ln1 = nn.LayerNorm(num_dims,eps=1e-5)
         self.attn = CausalSelfAttention(num_dims,num_heads,p=p)
         self.ln2 = nn.LayerNorm(num_dims,eps=1e-5)
-        self.mlp = MyMLP(in_features=num_dims,hidden_features=4*num_dims,out_features=num_dims)
+        self.mlp = MyMLP(in_features=num_dims, hidden_features=4 * num_dims, out_features=num_dims, p=p)
 
     def forward(self,x):
         x = x + self.attn(self.ln1(x))

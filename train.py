@@ -40,9 +40,10 @@ def estimate_loss(model, dataset, eval_iters=20):
 
 for i in range(max_iters):
 
-    if i%eval_interval == 0 or i == max_iters-1 :
-        losses = estimate_loss(model,dataset)
+    if i % eval_interval == 0 or i == max_iters - 1:
+        losses = estimate_loss(model, dataset)
         print(f"Step {i:4d} | Train Loss: {losses['train']:.4f} | Val Loss: {losses['val']:.4f}")
+        torch.save(model.state_dict(), "checkpoint.pt")
 
     xb,yb = dataset.get_batch("train")
 
