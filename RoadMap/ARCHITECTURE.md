@@ -1,12 +1,16 @@
-# 🧠 Iris Architecture & Technical Implementation
+# Iris Architecture & Technical Implementation
 
 This document provides a technical breakdown of **Iris**—a Causal GPT Language Model built from scratch in PyTorch. 
 
 The codebase is organized into **3 distinct phases** depending on whether you want the main PyTorch production pipeline, educational notebooks with step-by-step comments, or raw comment-less Python implementations built from basic tensor math.
 
+<br/>
+
 ---
 
-## 🗺️ The 3 Codebase Phases
+<br/>
+
+## The 3 Codebase Phases
 
 | Phase | Path | Purpose | Content Type |
 |---|---|---|---|
@@ -14,11 +18,17 @@ The codebase is organized into **3 distinct phases** depending on whether you wa
 | **Phase 2: Educational Deep-Dives** | `Optional/` | Interactive notebooks breaking down Transformer building blocks step-by-step. | Notebooks with detailed comments & explanations |
 | **Phase 3: Raw Clean Code** | `Optional/CleanCode/` | Low-level Python implementations built from scratch without high-level PyTorch abstractions. | Comment-less raw Python (minimal PyTorch abstractions) |
 
+<br/>
+
 ---
 
-## 🏗️ Main Architecture (`model.py`)
+<br/>
+
+## Main Architecture (`model.py`)
 
 Iris is implemented as an autoregressive decoder-only Transformer built from scratch using PyTorch (`torch.nn`).
+
+<br/>
 
 ### Model Hyperparameters
 
@@ -32,16 +42,25 @@ Iris is implemented as an autoregressive decoder-only Transformer built from scr
 | **Transformer Layers** (`num_layers`) | `6` | Number of stacked Transformer blocks |
 | **Dropout** (`p`) | `0.1` | Regularization dropout rate |
 
+<br/>
+
 ---
+
+<br/>
 
 ### Inference Strategy: Internalized Wisdom (No RAG)
 
 Unlike conventional search-based AI setups that use Retrieval-Augmented Generation (RAG) to query vector databases at runtime, Iris is designed to **internalize philosophical principles directly within its weights**. 
 
 - **No runtime document search**: Eliminates vector database lookups and raw scripture snippet injection.
+
 - **Philosophical Reconnection**: The model is trained to process user crisis inputs through internal attention layers and reconnect situations directly to timeless philosophical patterns.
 
+<br/>
+
 ---
+
+<br/>
 
 ### Component Breakdown
 
@@ -54,23 +73,33 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 - **Causal Masking**: Upper triangular mask (`torch.triu`) setting future token attention scores to $-\infty$.
 - **Output Projection & Dropout**: Linear output projection followed by residual dropout.
 
+<br/>
+
 #### 2. Feed-Forward Network (`MyMLP`)
 - **Expansion**: $4 \times d_{model}$ ($256 \rightarrow 1024 \rightarrow 256$).
 - **Activation**: Gaussian Error Linear Unit (`GELU`).
 - **Dropout**: Regularization dropout after final projection.
 
+<br/>
+
 #### 3. Transformer Block (`Transformer`)
 - Pre-LayerNorm block design for enhanced training stability:
   $$\text{Input} \rightarrow \mathbf{x} + \text{Attn}(\text{LN}_1(\mathbf{x})) \rightarrow \mathbf{x}' + \text{MLP}(\text{LN}_2(\mathbf{x}'))$$
+
+<br/>
 
 #### 4. Top-Level GPT Model (`GPT`)
 - **Embeddings**: Token embeddings + learned 1D positional embeddings.
 - **Blocks**: Stack of `num_layers` Transformer blocks.
 - **Head**: Final LayerNorm (`ln_f`) followed by linear LM head mapping to `vocab_size`.
 
+<br/>
+
 ---
 
-## 💾 Pipeline & Data Workflow
+<br/>
+
+## Pipeline & Data Workflow
 
 ### Data Preparation (`prepare.py`)
 - Reads raw training corpus (`canary_dataset.txt`).
@@ -79,13 +108,19 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 - Splits data 90% training / 10% validation.
 - Saves binary token arrays as `np.uint16` (`train.bin`, `val.bin`).
 
+<br/>
+
 ### Data Loading (`dataset.py`)
 - Uses NumPy memory-mapping (`np.memmap`) for zero-copy binary reading from disk.
 - Pins memory on CUDA devices (`pin_memory()`) for fast host-to-GPU memory transfer.
 
+<br/>
+
 ---
 
-## ⚡ Training Pipeline (`train.py`)
+<br/>
+
+## Training Pipeline (`train.py`)
 
 | Hyperparameter | Setting |
 |---|---|
@@ -97,18 +132,29 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 | **Eval Interval** | Every `250` steps |
 | **Checkpoint Output** | `checkpoint.pt` |
 
+<br/>
+
 ---
 
-## 🎯 Sampling & Generation (`generate.py`)
+<br/>
+
+## Sampling & Generation (`generate.py`)
 
 1. **Context Cropping**: Automatically crops prompt sequences exceeding `seq_len=128`.
+
 2. **Temperature Scaling**: Logits scaled by $T = 0.8$.
+
 3. **Top-K Filtering**: Candidate pool restricted to top $K = 40$ tokens.
+
 4. **Multinomial Sampling**: Stochastic token sampling via `torch.multinomial`.
+
+<br/>
 
 ---
 
-## 🚀 Execution Guide
+<br/>
+
+## Execution Guide
 
 Run the pipeline from the project root:
 
@@ -123,9 +169,13 @@ python train.py
 python generate.py
 ```
 
+<br/>
+
 ---
 
-## 🔍 How to Navigate the Codebase
+<br/>
+
+## How to Navigate the Codebase
 
 - **Need the main PyTorch production pipeline?**  
   Look directly at the root files (`model.py`, `train.py`, `dataset.py`, `prepare.py`, `generate.py`). They contain clean, modular execution scripts using standard PyTorch `torch.nn` modules.
