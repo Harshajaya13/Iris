@@ -36,10 +36,10 @@ Iris is implemented as an autoregressive decoder-only Transformer built from scr
 |---|---|---|
 | **Total Parameters** | `~20 Million` | Custom proof-of-concept decoder scale |
 | **Vocabulary Size** (`vocab_size`) | `50,257` | GPT-2 BPE Tokenizer Vocabulary |
-| **Sequence Length** (`seq_len`) | `128` | Maximum context window length |
-| **Embedding Dimension** (`num_dims`) | `256` | Model hidden dimension ($d_{model}$) |
-| **Attention Heads** (`num_heads`) | `4` | Multi-head attention count ($d_{head} = 64$) |
-| **Transformer Layers** (`num_layers`) | `6` | Number of stacked Transformer blocks |
+| **Sequence Length** (`seq_len`) | `64` | Maximum context window length |
+| **Embedding Dimension** (`num_dims`) | `128` | Model hidden dimension ($d_{model}$) |
+| **Attention Heads** (`num_heads`) | `4` | Multi-head attention count ($d_{head} = 32$) |
+| **Transformer Layers** (`num_layers`) | `4` | Number of stacked Transformer blocks |
 | **Dropout** (`p`) | `0.1` | Regularization dropout rate |
 
 <br/>
@@ -76,7 +76,7 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 <br/>
 
 #### 2. Feed-Forward Network (`MyMLP`)
-- **Expansion**: $4 \times d_{model}$ ($256 \rightarrow 1024 \rightarrow 256$).
+- **Expansion**: $4 \times d_{model}$ ($128 \rightarrow 512 \rightarrow 128$).
 - **Activation**: Gaussian Error Linear Unit (`GELU`).
 - **Dropout**: Regularization dropout after final projection.
 
@@ -125,11 +125,11 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 | Hyperparameter | Setting |
 |---|---|
 | **Optimizer** | `AdamW` |
-| **Learning Rate** | `5e-4` |
-| **Max Iterations** | `5000` |
-| **Batch Size** | `32` |
+| **Learning Rate** | `1e-3` |
+| **Max Iterations** | `1000` |
+| **Batch Size** | `16` |
 | **Gradient Clipping** | `max_norm = 1.0` |
-| **Eval Interval** | Every `250` steps |
+| **Eval Interval** | Every `100` steps |
 | **Checkpoint Output** | `checkpoint.pt` |
 
 <br/>
@@ -140,7 +140,7 @@ Unlike conventional search-based AI setups that use Retrieval-Augmented Generati
 
 ## Sampling & Generation (`generate.py`)
 
-1. **Context Cropping**: Automatically crops prompt sequences exceeding `seq_len=128`.
+1. **Context Cropping**: Automatically crops prompt sequences exceeding `seq_len=64`.
 
 2. **Temperature Scaling**: Logits scaled by $T = 0.8$.
 

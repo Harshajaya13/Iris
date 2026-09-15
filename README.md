@@ -49,14 +49,14 @@ For a person to truly understand a complex situation requires deep emotional und
 ## Current Status: "Today it is a Kid"
 
 > [!NOTE]  
-> **v0.1 Proof-of-Concept**: Iris is currently a **20M-parameter model built entirely from scratch**—tokenizer, architecture, dataset pipeline, and training loop. Right now, it validates the baseline architecture step of our unrelenting journey. Think of it as a kid: honest, limited, and at the starting baseline.
+> **v0.1 Proof-of-Concept**: Iris is currently a **20M-parameter model**—architecture, dataset pipeline, and training loop built from scratch, with `tiktoken` (GPT-2 BPE) used for tokenization. Right now, it validates the baseline architecture step of our unrelenting journey. Think of it as a kid: honest, limited, and at the starting baseline.
 
 <br/>
 
 | Dimension | Current Reality (v0.1) | Future Roadmap |
 |---|---|---|
 | **Architecture** | 20M Parameter Decoder-Only Transformer | Scaled Architecture & LoRA Support |
-| **Tokenizer** | Custom BPE Tokenizer (`tiktoken` / GPT-2) | Multilingual & Sanskrit Diacritics BPE |
+| **Tokenizer** | `tiktoken` GPT-2 BPE (OpenAI — not custom-built) | Custom Multilingual & Sanskrit Diacritics BPE |
 | **Pipeline** | Baseline Architecture Validation | High-Throughput Local Inference |
 | **Status** | Proof-of-Concept Baseline | Full Conversational & Philosophical Partner |
 
@@ -218,7 +218,7 @@ Iris does not promote any specific religion or dogma. She draws from universal p
 
 ## Roadmap
 
-- [x] **v0.1** — 20M-parameter baseline architecture, custom tokenizer, proof-of-concept
+- [x] **v0.1** — 20M-parameter baseline architecture, `tiktoken` GPT-2 BPE tokenizer, proof-of-concept
 - [ ] **v0.2** — Basic chat & philosophical reconnection
 - [ ] **v0.3** — Local LoRA personalization adapter support
 - [ ] **v0.4** — Quantized local inference optimized for laptops
@@ -256,7 +256,7 @@ Looking for technical implementation, code, or architecture breakdown?
 | **`README.md`** *(You are here)* | **The Vision & Purpose**: Philosophy, human limitations, Alexander principle, status, interaction flow, roadmap. |
 | [**`ARCHITECTURE.md`**](./RoadMap/ARCHITECTURE.md) | **The Code & Math**: PyTorch GPT implementation, 3-Phase codebase breakdown, dataset pipeline, 20M specs, training setup. |
 | [**`RoadMap/RoadMap.md`**](./RoadMap/RoadMap.md) | **The Building Roadmap**: Epochs 1–60 milestone guide for building decoder-only Transformers from scratch. |
-| [**`_.ipynb`**](./_.ipynb) | **Learning Philosophy**: The 4-step method (Official docs, AI decomposition, code-debug-rewrite loop, nanoGPT analysis). |
+| [**`_.ipynb`**](./_Philosophy.ipynb) | **Learning Philosophy**: The 4-step method (Official docs, AI decomposition, code-debug-rewrite loop, nanoGPT analysis). |
 
 <br/>
 

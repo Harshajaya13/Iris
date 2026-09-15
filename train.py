@@ -38,18 +38,30 @@ def estimate_loss(model, dataset, eval_iters=20):
     return out
 
 
+best_val_loss = float("inf")
+
 for i in range(max_iters):
 
     if i % eval_interval == 0 or i == max_iters - 1:
         losses = estimate_loss(model, dataset)
         print(f"Step {i:4d} | Train Loss: {losses['train']:.4f} | Val Loss: {losses['val']:.4f}")
-        torch.save(model.state_dict(), "checkpoint.pt")
+        
+        if losses["val"] < best_val_loss:
+            best_val_loss = losses["val"]
+            checkpoint = {
+                "model": model.state_dict(),
+                "optimizer": optimizer.state_dict(),
+                "iter": i,
+                "best_val_loss": best_val_loss,
+            }
+            torch.save(checkpoint, "best_checkpoint.pt")
+            print(f"(Val Loss: {best_val_loss:.4f})")
 
-    xb,yb = dataset.get_batch("train")
+    xb, yb = dataset.get_batch("train")
 
     optimizer.zero_grad(set_to_none=True)
 
-    logits,loss = model(xb,yb)
+    logits, loss = model(xb, yb)
 
     loss.backward()
 
@@ -57,5 +69,12 @@ for i in range(max_iters):
 
     optimizer.step()
 
-torch.save(model.state_dict(), "checkpoint.pt")
-print("Training complete. Weights saved to checkpoint.pt")
+final_checkpoint = {
+    "model": model.state_dict(),
+    "optimizer": optimizer.state_dict(),
+    "iter": max_iters,
+    "best_val_loss": best_val_loss,
+}
+
+torch.save(final_checkpoint, "latest_checkpoint.pt")
+print("Training complete. Final state saved to latest_checkpoint.pt")

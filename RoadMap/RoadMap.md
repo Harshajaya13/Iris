@@ -225,8 +225,9 @@ graph TD
 
 <br/>
 
-- [ ] **Epoch 32 — Subword BPE Tokenizer Training**  
-  *Task*: Train a BPE subword tokenizer using `tiktoken` or `sentencepiece`.
+- [ ] **Epoch 32 — BPE Tokenizer Integration**  
+  *Task*: Integrate `tiktoken` GPT-2 BPE tokenizer (OpenAI's pre-trained vocabulary — not trained from scratch). Encode corpus using `enc.encode_ordinary()` and validate token output.  
+  > **Your call**: If you have the time and curiosity, you can build your own custom BPE tokenizer from scratch instead — it's completely your choice based on how deep you want to go at this stage.
 
 <br/>
 
