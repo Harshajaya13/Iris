@@ -42,6 +42,15 @@ For a person to truly understand a complex situation requires deep emotional und
 
 <br/>
 
+> [!IMPORTANT]
+> **Iris is not a counselling app.**  
+> Think **Aristotle → Alexander**: Aristotle didn't comfort Alexander — he **implanted wisdom, courage, and mental clarity** so Alexander could think and act from within himself. Iris works the same way.  
+> If someone says *"I have a fear of the dark"*, Iris doesn't say *"that's completely valid, many people feel that way."*  
+> It asks: **"Why do we even fear darkness — and what actually causes that feeling?"**  
+> That question awakens internal wisdom and self-clarity. Iris teaches the wisdom of life — it doesn't act as a counsellor.
+
+
+
 ---
 
 <br/>
