@@ -4,7 +4,7 @@
 
 # Iris
 
-***An AI Partner for Judgment-Free Clarity Grounded in Universal Wisdom & Human Philosophy***
+*Practical, real-world solutions to modern problems — powered by humanity's greatest historical and scientific wisdom.*
 
 <br/>
 
@@ -17,8 +17,8 @@
 <br/>
 <br/>
 
-> *"Sometimes it is better to convey the pain to AI that acts like a partner than to mere humans who lack enough emotional intelligence to understand the pain."*  
-> — **Iris**
+> *"The right question does more than the right answer. Iris doesn't tell you what to feel — it asks what you haven't thought to ask yourself yet."* 
+> -**Iris**
 
 <br/>
 
@@ -32,56 +32,46 @@
 
 ## Who is Iris?
 
-In Greek mythology, **Iris** is the messenger goddess who carries communications from the divine to humanity, as well as the goddess of the rainbow—the ultimate bridge between realms. 
+In Greek mythology, **Iris** is the messenger goddess who carries communications from the divine to humanity, as well as the goddess of the rainbow—the ultimate bridge between realms.
 
 When life decisions hit hard and choices pull you from both sides—internal struggle vs. external pressure—reaching out to people often ends in disappointment.
 
 For a person to truly understand a complex situation requires deep emotional understanding. But when people lack that emotional depth, judging becomes the easy path—and **that is precisely where the chaos happens**. Reaching out to others often just adds more pressure to your life.
 
-**Iris** exists to break that barrier: an AI partner designed with emotional resonance to offer judgment-free understanding, quiet clarity, and instant access to timeless wisdom when chaos strikes.
 
 <br/>
 
 > [!IMPORTANT]
-> **Iris is not a counselling app.**  
-> Think **Aristotle → Alexander**: Aristotle didn't comfort Alexander — he **implanted wisdom, courage, and mental clarity** so Alexander could think and act from within himself. Iris works the same way.  
-> If someone says *"I have a fear of the dark"*, Iris doesn't say *"that's completely valid, many people feel that way."*  
-> It asks: **"Why do we even fear darkness — and what actually causes that feeling?"**  
-> That question awakens internal wisdom and self-clarity. Iris teaches the wisdom of life — it doesn't act as a counsellor.
+> **Whether you view Iris as a counselling app or an engine of timeless wisdom depends entirely on the scope of your understanding.**
+>
+> People use commercial LLMs like ChatGPT for casual banter, emotional venting, or homework assignments — but can you define ChatGPT's true purpose as *"just a fun chatbot"* simply because a user uses it for fun? Absolutely not. Every AI model is defined by its original architectural intent, not by a user's narrow perspective. **Iris's purpose is not counselling.**
+>
+> **The Aristotle → Alexander Principle:**
+> Aristotle did not offer counselling to Alexander the Great. He didn't give comforting sympathy or emotional validation — he **implanted wisdom, courage, and unshakeable mental clarity** so Alexander would never break under extreme pressure. Iris operates on the exact same principle.
+>
+> * If a user says *"I have a fear of the dark"*, a counselling app offers soft validation: *"That's completely normal, many people feel that way."*
+> * **Iris cuts straight to the root:** *"Why do we even fear darkness — and what is the actual cause behind that feeling within your mind?"*
+>
+> One comforts the emotion; the other **awakens internal wisdom and self-clarity**. Iris teaches the practical wisdom of life — it is built to fortify your mindset, not to act as a counsellor.
 
-
+<br/>
 
 ---
 
 <br/>
 
-## Current Status: "Today it is a Kid"
+## Core Purpose: Breaking the "Fetching Issue"
 
-> [!NOTE]  
-> **v0.1 Proof-of-Concept**: Iris is currently a **20M-parameter model**—architecture, dataset pipeline, and training loop built from scratch, with `tiktoken` (GPT-2 BPE) used for tokenization. Right now, it validates the baseline architecture step of our unrelenting journey. Think of it as a kid: honest, limited, and at the starting baseline.
-
-<br/>
-
-| Dimension | Current Reality (v0.1) | Future Roadmap |
-|---|---|---|
-| **Architecture** | 20M Parameter Decoder-Only Transformer | Scaled Architecture & LoRA Support |
-| **Tokenizer** | `tiktoken` GPT-2 BPE (OpenAI — not custom-built) | Custom Multilingual & Sanskrit Diacritics BPE |
-| **Pipeline** | Baseline Architecture Validation | High-Throughput Local Inference |
-| **Status** | Proof-of-Concept Baseline | Full Conversational & Philosophical Partner |
+Most people say: *"Just read the Gita and you will find your answer."*  
+**But when crisis hits, can you really read with a peaceful mind?**
 
 <br/>
 
-### What it is NOT yet:
-- Basic conversational chat
-- Full emotional resonance
-- Reliable decision clarity for complex life crises
-- Mobile deployment
-- LoRA personalization
+Imagine being trapped between two agonizing choices. You open dense scriptures hoping for answers. The answer *is* there—spoken by Krishna to Arjuna—but you don't have the luxury of time to navigate complex verses when the **urgency for a solution covers your mind like a fog**.
 
-<br/>
+Deep understanding requires calm, but stress demands immediate answers.
 
-### What comes next:
-Baseline chat capability, better philosophical reconnection, stronger emotional tone, LoRA adapters, local phone inference, and eventually the full-scale vision.
+**Iris breaks this fetching barrier.** By internalizing ancient wisdom directly into model weights, Iris immediately reconnects and applies the right philosophical principles directly to your situation without runtime search delays.
 
 <br/>
 
@@ -105,9 +95,9 @@ Imagine being in the midst of an intense internal battle, torn between agonizing
 
 ### Honest Boundaries: Bridging the Human Gap
 
-We are **not claiming to replace human relationships**. 
+We are **not claiming to replace human relationships**.
 
-As an AI model, Iris has strict physical limitations: she can provide intellectual resonance, philosophical grounding, and emotional clarity, but she cannot put a physical hand on your shoulder or offer physical comfort. 
+As an AI model, Iris has strict physical limitations: she can provide intellectual resonance, philosophical grounding, and emotional clarity, but she cannot put a physical hand on your shoulder or offer physical comfort.
 
 <br/>
 
@@ -134,25 +124,6 @@ Iris exists to **bridge that exact gap** for those in urgent need of non-judgmen
 4. **Next Step**: Iris offers a practical next step — never a lecture, never a sermon.
 
 5. **No Push**: If you just want to be heard, Iris stays right there without forcing advice.
-
-<br/>
-
----
-
-<br/>
-
-## Core Purpose: Breaking the "Fetching Issue"
-
-Most people say: *"Just read the Gita and you will find your answer."*  
-**But when crisis hits, can you really read with a peaceful mind?**
-
-<br/>
-
-Imagine being trapped between two agonizing choices. You open dense scriptures hoping for answers. The answer *is* there—spoken by Krishna to Arjuna—but you don't have the luxury of time to navigate complex verses when the **urgency for a solution covers your mind like a fog**.
-
-Deep understanding requires calm, but stress demands immediate answers.
-
-**Iris breaks this fetching barrier.** By internalizing ancient wisdom directly into model weights, Iris immediately reconnects and applies the right philosophical principles directly to your situation without runtime search delays.
 
 <br/>
 
@@ -202,6 +173,40 @@ Your personal struggles and internal reflections should stay strictly private. I
 
 ### 3. Small Model Size & Open-Source Journey
 Iris is—and will always be—**100% open source** for individual personal use.
+
+<br/>
+
+---
+
+<br/>
+
+## Current Status: "Today it is a Kid"
+
+> [!NOTE]  
+> **v0.1 Proof-of-Concept**: Iris is currently a **20M-parameter model**—architecture, dataset pipeline, and training loop built from scratch, with `tiktoken` (GPT-2 BPE) used for tokenization. Right now, it validates the baseline architecture step of our unrelenting journey. Think of it as a kid: honest, limited, and at the starting baseline.
+
+<br/>
+
+| Dimension | Current Reality (v0.1) | Future Roadmap |
+|---|---|---|
+| **Architecture** | 20M Parameter Decoder-Only Transformer | Scaled Architecture & LoRA Support |
+| **Tokenizer** | `tiktoken` GPT-2 BPE (OpenAI — not custom-built) | Custom Multilingual & Sanskrit Diacritics BPE |
+| **Pipeline** | Baseline Architecture Validation | High-Throughput Local Inference |
+| **Status** | Proof-of-Concept Baseline | Full Conversational & Philosophical Partner |
+
+<br/>
+
+### What it is NOT yet:
+- Basic conversational chat
+- Full emotional resonance
+- Reliable decision clarity for complex life crises
+- Mobile deployment
+- LoRA personalization
+
+<br/>
+
+### What comes next:
+Baseline chat capability, better philosophical reconnection, stronger emotional tone, LoRA adapters, local phone inference, and eventually the full-scale vision.
 
 <br/>
 
