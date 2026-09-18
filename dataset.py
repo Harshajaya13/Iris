@@ -11,6 +11,11 @@ class DataLoader:
         train_path = os.path.join(data_dir, "train.bin")
         val_path = os.path.join(data_dir, "val.bin")
 
+        if not os.path.exists(train_path):
+            fallback_dir = os.path.join("Optional", "sample_dataset")
+            train_path = os.path.join(fallback_dir, "train.bin")
+            val_path = os.path.join(fallback_dir, "val.bin")
+
         self.train_data = np.memmap(train_path, dtype=np.uint16, mode="r")
         self.val_data = np.memmap(val_path, dtype=np.uint16, mode="r")
 

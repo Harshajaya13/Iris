@@ -384,7 +384,7 @@ graph TD
 <br/>
 
 - [ ] **Epoch 59 — Technical Architecture Documentation Sync**  
-  *Task*: Update [`ARCHITECTURE.md`](file:///home/harsha/Projects/Astra/ARCHITECTURE.md) and [`README.md`](file:///home/harsha/Projects/Astra/README.md) to reflect completed pipeline specifications.
+  *Task*: Update [`ARCHITECTURE.md`](file:///home/harsha/Projects/Iris/ARCHITECTURE.md) and [`README.md`](file:///home/harsha/Projects/Iris/README.md) to reflect completed pipeline specifications.
 
 <br/>
 

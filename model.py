@@ -1,5 +1,5 @@
 """
-If you want to see the full code without modules then go to the link:
+If you want to see the full code without modules then go to the link: https://github.com/Harshajaya13/Iris/blob/main/Optional/CleanCode/raw_gpt.ipynb
 """
 
 import math
